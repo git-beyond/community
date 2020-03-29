@@ -52,7 +52,7 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
-             userMapper.insert(user);
+            userMapper.insert(user);
             //登陆成功,写cookie和session
             request.getSession().setAttribute("user",githubUser);
             return "redirect:/";
@@ -60,7 +60,6 @@ public class AuthorizeController {
             //登陆失败，重新登陆
             return "redirect:/";
         }
-
     }
 }
 
